@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polaris OS — Aurora Edition</title>
+    <title>Polaris OS — Aurora Edition v3.0</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Lucide Icons -->
@@ -100,13 +100,13 @@
             position: absolute;
             display: flex;
             flex-direction: column;
-            border-radius: 1.25rem;
+            border-radius: 1rem;
             overflow: hidden;
             min-width: 380px;
             min-height: 280px;
-            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            background: rgba(15, 23, 42, 0.92);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(28px);
             transition: opacity 0.2s ease, transform 0.2s ease;
         }
@@ -132,9 +132,14 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Shell Layouts */
         body.layout-linux #taskbarDock { left: 1rem; transform: none; border-radius: 1.5rem; }
-        body.layout-windows #taskbarDock { left: 0; transform: none; width: 100%; border-radius: 0; bottom: 0; padding: 0.5rem 1rem; justify-content: space-between; }
+        body.layout-windows #taskbarDock { left: 50%; transform: translateX(-50%); bottom: 8px; border-radius: 18px; background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(255,255,255,0.15); padding: 6px 14px; backdrop-filter: blur(20px); }
         body.layout-polaris #taskbarDock { left: 50%; transform: translateX(-50%); border-radius: 2.5rem; }
+
+        /* Windows 11 window styling overrides */
+        body.layout-windows .window-header { background: rgba(15, 23, 42, 0.98); }
+        body.layout-windows .os-window { border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); }
 
         ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #0f172a; }
@@ -151,11 +156,32 @@
         .boot-spark{position:absolute;width:7px;height:7px;border-radius:50%;background:#f0abfc;box-shadow:0 0 18px #e879f9}.spark-a{top:5px;right:21px}.spark-b{bottom:12px;left:13px;background:#67e8f9;box-shadow:0 0 18px #22d3ee}.spark-c{right:4px;bottom:37px;width:4px;height:4px}
         .boot-title{color:#fff;text-shadow:0 0 34px #38bdf877;animation:title-in 1.1s cubic-bezier(.2,.8,.2,1) both}.boot-title span{color:#67e8f9;text-shadow:0 0 30px #22d3eeaa}.boot-reveal{animation:fade-rise 1s .25s both}.boot-progress-track{height:7px;border-radius:999px;background:#ffffff13;border:1px solid #ffffff1c;overflow:hidden;position:relative;box-shadow:inset 0 1px 4px #0008}.boot-progress-fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,#22d3ee,#818cf8,#e879f9,#fb7185);box-shadow:0 0 18px #67e8f9aa;transition:width .5s cubic-bezier(.2,.8,.2,1)}.boot-progress-glint{position:absolute;top:0;bottom:0;width:24%;left:-30%;background:linear-gradient(90deg,transparent,#fff9,transparent);animation:glint 1.8s ease-in-out infinite}.boot-pip{width:5px;height:5px;border-radius:50%;background:#67e8f9;animation:pip 1s ease-in-out infinite}.boot-pip:nth-child(2){animation-delay:.18s}.boot-pip:nth-child(3){animation-delay:.36s}
         @keyframes grid-drift{to{background-position:48px 48px}}@keyframes orb-float{to{transform:translate3d(30px,-24px,0) scale(1.12)}}@keyframes logo-hover{50%{transform:translateY(-7px) rotate(2deg)}}@keyframes ring-spin{to{transform:rotate(390deg)}}@keyframes title-in{from{opacity:0;transform:translateY(18px);letter-spacing:.24em}to{opacity:1;transform:translateY(0)}}@keyframes fade-rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@keyframes glint{to{left:120%}}@keyframes pip{50%{opacity:.25;transform:scale(.7)}}
-        #filesWindow,#peopleWindow{backdrop-filter:blur(24px);border:1px solid #67e8f933;border-radius:22px;overflow:hidden;box-shadow:0 30px 100px #0009,0 0 50px #22d3ee0b;background:linear-gradient(145deg,#0d172cfa,#080d1bf7)}
-        #filesWindow .window-header,#peopleWindow .window-header{background:linear-gradient(100deg,#11243c,#17132f);border-bottom:1px solid #ffffff12;cursor:move}
-        .store-shell{background:linear-gradient(145deg,#101a35f5,#101026f7);border:1px solid #7dd3fc55;box-shadow:0 35px 100px #000a,0 0 50px #6366f122;backdrop-filter:blur(28px)}.store-hero{background:linear-gradient(115deg,#12334c 0%,#292052 53%,#421b4a 100%);border-bottom:1px solid #ffffff19}.store-hero-glow{position:absolute;right:-7%;top:-95%;width:330px;height:330px;border-radius:50%;background:#22d3ee33;filter:blur(35px)}.store-mark{width:54px;height:54px;display:grid;place-items:center;border-radius:18px;color:#e0faff;background:linear-gradient(145deg,#22d3ee44,#a78bfa44);border:1px solid #a5f3fc66;box-shadow:0 0 26px #22d3ee22}.store-close{padding:10px;border-radius:13px;background:#ffffff13;color:#e2e8f0;border:1px solid #ffffff20;transition:.2s}.store-close:hover{background:#fb718533;color:white;transform:rotate(90deg)}.store-stat{border:1px solid #ffffff1b;background:#070d1c55;border-radius:15px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}.store-stat span{font-size:20px;font-weight:800;color:#fff}.store-stat small{font-size:9px;letter-spacing:.15em;color:#cbd5e1a8}.store-content{scrollbar-color:#53658a transparent}.store-panel{border:1px solid #ffffff18;border-radius:22px;background:linear-gradient(145deg,#ffffff08,#05081655);box-shadow:inset 0 1px #ffffff08}.store-icon-chip{display:grid;place-items:center;width:34px;height:34px;border-radius:12px;background:#22d3ee18;color:#67e8f9;border:1px solid #22d3ee33}.store-icon-chip.pink{background:#e879f918;color:#f0abfc;border-color:#e879f933}.store-dropzone{border:1px dashed #67e8f977;border-radius:17px;padding:22px 14px;text-align:center;background:linear-gradient(135deg,#22d3ee0d,#a78bfa0d);transition:.22s}.store-dropzone:hover{border-color:#f0abfc;background:linear-gradient(135deg,#22d3ee1b,#e879f91b);transform:translateY(-2px)}.store-empty{border:1px solid #ffffff12;border-radius:14px;background:#05081655;padding:18px;text-align:center;color:#94a3b8;font-size:12px}.store-app-card{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid #ffffff14;border-radius:15px;background:#ffffff06;transition:.2s;min-width:0}.store-app-card:hover{background:#ffffff0b;border-color:#67e8f966;transform:translateY(-1px)}.store-app-icon{flex:0 0 auto;width:40px;height:40px;display:grid;place-items:center;border-radius:13px;color:#a5f3fc;background:linear-gradient(145deg,#0891b233,#7c3aed33);border:1px solid #67e8f933}.store-app-title{font-size:12px;font-weight:800;color:#f8fafc;overflow-wrap:anywhere}.store-app-meta{font-size:10px;color:#94a3b8;margin-top:3px}.store-action{font-size:10px;font-weight:800;padding:8px 10px;border-radius:10px;white-space:nowrap;color:#06111f;background:linear-gradient(100deg,#67e8f9,#a5b4fc);transition:.2s}.store-action:hover{filter:brightness(1.12);transform:translateY(-1px)}.store-action.pink{color:#fff;background:linear-gradient(100deg,#a78bfa,#e879f9)}.store-action.ghost{color:#cbd5e1;background:#ffffff0c;border:1px solid #ffffff18}.store-footer{border-top:1px solid #ffffff13;padding-top:15px}.store-small-btn{font-size:10px;color:#cbd5e1;border:1px solid #ffffff1a;border-radius:10px;padding:8px 11px;background:#ffffff08}.store-small-btn:hover{background:#22d3ee18;border-color:#67e8f955;color:white}
-        @media(prefers-reduced-motion:reduce){.boot-grid,.boot-orb,.boot-logo-wrap,.boot-logo-ring,.boot-title,.boot-reveal,.boot-progress-glint,.boot-pip{animation:none!important}.store-app-card,.store-dropzone,.store-close{transition:none!important}}
-
+        
+        /* Store shell styling */
+        .store-shell{background:linear-gradient(145deg,#101a35f5,#101026f7);border:1px solid #7dd3fc55;box-shadow:0 35px 100px #000a,0 0 50px #6366f122;backdrop-filter:blur(28px)}
+        .store-hero{background:linear-gradient(115deg,#12334c 0%,#292052 53%,#421b4a 100%);border-bottom:1px solid #ffffff19}
+        .store-hero-glow{position:absolute;right:-7%;top:-95%;width:330px;height:330px;border-radius:50%;background:#22d3ee33;filter:blur(35px)}
+        .store-mark{width:54px;height:54px;display:grid;place-items:center;border-radius:18px;color:#e0faff;background:linear-gradient(145deg,#22d3ee44,#a78bfa44);border:1px solid #a5f3fc66;box-shadow:0 0 26px #22d3ee22}
+        .store-close{padding:10px;border-radius:13px;background:#ffffff13;color:#e2e8f0;border:1px solid #ffffff20;transition:.2s}
+        .store-close:hover{background:#fb718533;color:white;transform:rotate(90deg)}
+        .store-stat{border:1px solid #ffffff1b;background:#070d1c55;border-radius:15px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}
+        .store-stat span{font-size:20px;font-weight:800;color:#fff}
+        .store-stat small{font-size:9px;letter-spacing:.15em;color:#cbd5e1a8}
+        .store-panel{border:1px solid #ffffff18;border-radius:22px;background:linear-gradient(145deg,#ffffff08,#05081655);box-shadow:inset 0 1px #ffffff08}
+        .store-dropzone{border:1px dashed #67e8f977;border-radius:17px;padding:22px 14px;text-align:center;background:linear-gradient(135deg,#22d3ee0d,#a78bfa0d);transition:.22s}
+        .store-dropzone:hover{border-color:#f0abfc;background:linear-gradient(135deg,#22d3ee1b,#e879f91b);transform:translateY(-2px)}
+        .store-empty{border:1px solid #ffffff12;border-radius:14px;background:#05081655;padding:18px;text-align:center;color:#94a3b8;font-size:12px}
+        .store-app-card{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid #ffffff14;border-radius:15px;background:#ffffff06;transition:.2s;min-width:0}
+        .store-app-card:hover{background:#ffffff0b;border-color:#67e8f966;transform:translateY(-1px)}
+        .store-app-icon{flex:0 0 auto;width:40px;height:40px;display:grid;place-items:center;border-radius:13px;color:#a5f3fc;background:linear-gradient(145deg,#0891b233,#7c3aed33);border:1px solid #67e8f933}
+        .store-app-title{font-size:12px;font-weight:800;color:#f8fafc;overflow-wrap:anywhere}
+        .store-app-meta{font-size:10px;color:#94a3b8;margin-top:3px}
+        .store-action{font-size:10px;font-weight:800;padding:8px 10px;border-radius:10px;white-space:nowrap;color:#06111f;background:linear-gradient(100deg,#67e8f9,#a5b4fc);transition:.2s}
+        .store-action:hover{filter:brightness(1.12);transform:translateY(-1px)}
+        .store-action.pink{color:#fff;background:linear-gradient(100deg,#a78bfa,#e879f9)}
+        .store-action.ghost{color:#cbd5e1;background:#ffffff0c;border:1px solid #ffffff18}
+        .store-small-btn{font-size:10px;color:#cbd5e1;border:1px solid #ffffff1a;border-radius:10px;padding:8px 11px;background:#ffffff08}
+        .store-small-btn:hover{background:#22d3ee18;border-color:#67e8f955;color:white}
     </style>
 </head>
 <body class="flex flex-col h-full w-full overflow-hidden relative layout-polaris" id="osBody">
@@ -248,7 +274,7 @@
                 <i data-lucide="shield-alert" class="w-6 h-6"></i>
             </div>
             <h3 class="text-base font-bold text-white mb-1">Admin Security PIN</h3>
-            <p class="text-xs text-slate-400 mb-4">Enter the local admin PIN to open the admin panel.</p>
+            <p class="text-xs text-slate-400 mb-4">Enter PIN 1010 to open the administrator enclave.</p>
             <input type="password" id="adminPinInput" maxlength="4" placeholder="••••" onkeydown="if(event.key==='Enter')verifyAdminPin()" class="w-32 bg-slate-950 border border-slate-700 text-center tracking-widest text-lg rounded-2xl py-2 text-white mb-4 mono focus:outline-none focus:border-red-500">
             <div class="flex gap-2 w-full">
                 <button onclick="document.getElementById('adminPinModal').classList.add('hidden')" class="flex-1 py-2.5 rounded-xl bg-slate-800 text-slate-300 text-xs">Cancel</button>
@@ -267,7 +293,7 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold text-white">POLARIS ADMIN ENCLAVE</h3>
-                        <p class="text-[10px] text-red-400 mono">Admin panel · local UI PIN</p>
+                        <p class="text-[10px] text-red-400 mono">Authenticated via PIN 1010</p>
                     </div>
                 </div>
                 <button onclick="closeAdminModal()" class="p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
@@ -326,23 +352,30 @@
                     <div class="store-stat"><span id="storeLocalCount">0</span><small>MY APPS</small></div><div class="store-stat"><span id="storeGlobalCount">—</span><small>GLOBAL APPS</small></div><div class="store-stat"><span class="text-emerald-300">LIVE</span><small>SHARED CATALOGUE</small></div>
                 </div>
             </div>
-            <div class="p-4 sm:p-6 overflow-y-auto store-content">
+            <div class="p-4 sm:p-6 overflow-y-auto store-content flex-1">
                 <div class="grid xl:grid-cols-[.92fr_1.08fr] gap-5">
                     <section class="store-panel p-4 sm:p-5">
                         <div class="flex items-center justify-between gap-3 mb-4"><div><div class="text-[10px] uppercase tracking-[.2em] text-cyan-300 mono">ON THIS DEVICE</div><h3 class="text-lg font-bold text-white mt-1">My OS Apps</h3></div><span class="store-icon-chip"><i data-lucide="hard-drive-download" class="w-4 h-4"></i></span></div>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Import HTML apps into Polaris. They are saved in this browser on your device, so they stay there after you close the page.</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Import HTML apps into Polaris. Saved locally via IndexedDB so they persist safely.</p>
                         <label class="store-dropzone block cursor-pointer mb-3" for="storeLocalFile"><i data-lucide="file-up" class="w-7 h-7 text-cyan-300 mb-2"></i><span class="block text-sm font-bold text-white">Import an app file</span><span class="block text-[11px] text-slate-400 mt-1">Choose a .html or .htm file · up to 180 KB</span><input id="storeLocalFile" type="file" accept=".html,.htm,text/html" class="hidden" onchange="importLocalApp()"></label>
-                        <div id="storeLocalStatus" class="text-[11px] text-slate-400 min-h-4 mb-3">Your imported apps will appear here.</div>
+                        <div id="storeLocalStatus" class="text-[11px] text-cyan-300 font-semibold min-h-4 mb-3"></div>
                         <div id="storeLocalList" class="space-y-2"><div class="store-empty">Loading your local app library…</div></div>
                     </section>
-                    <section class="store-panel p-4 sm:p-5">
+                    <section class="store-panel p-4 sm:p-5 flex flex-col">
                         <div class="flex items-center justify-between gap-3 mb-4"><div><div class="text-[10px] uppercase tracking-[.2em] text-fuchsia-300 mono">SHARED WITH EVERYONE</div><h3 class="text-lg font-bold text-white mt-1">Global Catalogue</h3></div><span class="store-icon-chip pink"><i data-lucide="globe-2" class="w-4 h-4"></i></span></div>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Publish a saved app from My OS Apps. Small HTML files are stored in Realtime Database, so this version does not need Firebase Storage.</p>
-                        <div id="storeUploadList" class="space-y-2"><div class="store-empty">Connecting to the global catalogue…</div></div>
-                        <p class="text-[10px] text-slate-500 mt-4 leading-relaxed">Only open apps you trust. HTML apps can run code in the browser. The store accepts HTML files only and limits each app to 180 KB.</p>
+                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Publish a saved app to the Firebase cloud catalogue for others to run or save.</p>
+                        <div id="storeUploadList" class="space-y-2 flex-1 overflow-y-auto max-h-64"><div class="store-empty">Connecting to the global catalogue…</div></div>
+                        <p class="text-[10px] text-slate-500 mt-4 leading-relaxed">Only open apps you trust. HTML apps can run custom scripts in your browser.</p>
                     </section>
                 </div>
-                <div class="mt-5 store-footer flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"><div class="text-xs text-slate-400">Your files stay local until you choose <b class="text-slate-200">Publish</b>.</div><div class="flex gap-2 flex-wrap"><button onclick="setOsLayout('polaris')" class="store-small-btn">Polaris Dock</button><button onclick="setOsLayout('windows')" class="store-small-btn">Windows Deck</button><button onclick="setOsLayout('linux')" class="store-small-btn">GNOME Layout</button></div></div>
+                <div class="mt-6 store-footer flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-t border-white/10 pt-4">
+                    <div class="text-xs text-slate-400">Choose your shell style:</div>
+                    <div class="flex gap-2 flex-wrap">
+                        <button onclick="setOsLayout('polaris')" class="store-small-btn">Polaris Dock</button>
+                        <button onclick="setOsLayout('windows')" class="store-small-btn">Windows 11 Shell</button>
+                        <button onclick="setOsLayout('linux')" class="store-small-btn">GNOME Layout</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -362,14 +395,14 @@
                 <div class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center border border-purple-400/40 group-hover:scale-110 transition shadow-lg text-purple-400">
                     <i data-lucide="message-square" class="w-7 h-7"></i>
                 </div>
-                <span class="text-xs font-semibold text-slate-100 drop-shadow-md">Firebase Chat</span>
+                <span class="text-xs font-semibold text-slate-100 drop-shadow-md">Discord Chat</span>
             </button>
 
             <button onclick="openWindow('mailWindow')" class="w-20 flex flex-col items-center gap-2 group">
                 <div class="w-14 h-14 rounded-2xl glass-panel flex items-center justify-center border border-indigo-400/40 group-hover:scale-110 transition shadow-lg text-indigo-400">
                     <i data-lucide="mail" class="w-7 h-7"></i>
                 </div>
-                <span class="text-xs font-semibold text-slate-100 drop-shadow-md">Mail</span>
+                <span class="text-xs font-semibold text-slate-100 drop-shadow-md">Mail Client</span>
             </button>
 
             <button onclick="openWindow('appStudioWindow')" class="w-20 flex flex-col items-center gap-2 group">
@@ -398,23 +431,22 @@
 
         <div id="windowWorkspace" class="absolute inset-0 w-full h-full overflow-hidden pb-16">
 
-            <!-- POLARIS FILES: local IndexedDB file manager -->
+            <!-- POLARIS FILES -->
             <div id="filesWindow" class="os-window hidden w-[850px] h-[570px] top-10 left-24" style="z-index:104;">
                 <div class="window-header px-4 py-3 flex items-center justify-between" onmousedown="dragMouseDown(event,'filesWindow')">
-                    <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400/25 to-blue-600/25 border border-cyan-300/30 grid place-items-center text-cyan-200"><i data-lucide="folder-open" class="w-5 h-5"></i></div><div><div class="text-sm font-extrabold text-white">Polaris Files</div><div class="text-[10px] text-slate-400">Local storage · IndexedDB · stays on this device</div></div></div>
+                    <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400/25 to-blue-600/25 border border-cyan-300/30 grid place-items-center text-cyan-200"><i data-lucide="folder-open" class="w-5 h-5"></i></div><div><div class="text-sm font-extrabold text-white">Polaris Files</div><div class="text-[10px] text-slate-400">Local storage · IndexedDB</div></div></div>
                     <div class="flex gap-1.5"><button onclick="minimizeWindow('filesWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="minus" class="w-4 h-4"></i></button><button onclick="toggleWindowFullscreen('filesWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="maximize-2" class="w-4 h-4"></i></button><button onclick="closeWindow('filesWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="x" class="w-4 h-4"></i></button></div>
                 </div>
                 <div class="flex-1 min-h-0 flex flex-col bg-slate-950/90 p-4 gap-3 overflow-hidden">
-                    <div class="flex flex-wrap items-center gap-2"><label class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 text-xs font-extrabold cursor-pointer"><i data-lucide="upload" class="w-3.5 h-3.5 inline mr-1"></i> Import files<input id="fileManagerInput" type="file" multiple class="hidden" onchange="importUserFiles()"></label><input id="fileFolderInput" placeholder="Folder name (optional)" class="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs outline-none focus:border-cyan-400 w-44"><input id="fileSearchInput" placeholder="Search files…" oninput="renderUserFiles()" class="flex-1 min-w-[130px] px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs outline-none focus:border-cyan-400"><span id="fileStorageStat" class="text-[10px] text-slate-400">Loading…</span></div>
+                    <div class="flex flex-wrap items-center gap-2"><label class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-slate-950 text-xs font-extrabold cursor-pointer"><i data-lucide="upload" class="w-3.5 h-3.5 inline mr-1"></i> Import files<input id="fileManagerInput" type="file" multiple class="hidden" onchange="importUserFiles()"></label><input id="fileFolderInput" placeholder="Folder name" class="px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs outline-none focus:border-cyan-400 w-36"><input id="fileSearchInput" placeholder="Search files…" oninput="renderUserFiles()" class="flex-1 min-w-[130px] px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white text-xs outline-none focus:border-cyan-400"><span id="fileStorageStat" class="text-[10px] text-slate-400">Loading…</span></div>
                     <div class="grid grid-cols-[150px_1fr] flex-1 min-h-0 rounded-2xl border border-slate-800 overflow-hidden"><aside class="bg-slate-900/80 p-3 space-y-1"><div class="text-[9px] uppercase tracking-[.2em] text-slate-500 mb-3">Locations</div><button onclick="setFileFolder('*')" class="w-full text-left rounded-lg px-3 py-2 bg-cyan-400/10 text-cyan-200 text-xs"><i data-lucide="hard-drive" class="w-3.5 h-3.5 inline mr-2"></i>All files</button><button onclick="setFileFolder('')" class="w-full text-left rounded-lg px-3 py-2 hover:bg-slate-800 text-slate-300 text-xs"><i data-lucide="folder" class="w-3.5 h-3.5 inline mr-2"></i>Home</button><div id="fileFolderShortcuts" class="pt-2 space-y-1"></div></aside><div id="userFilesList" class="p-3 overflow-y-auto space-y-2 bg-slate-950/60"><div class="store-empty">Your files will appear here.</div></div></div>
-                    <div id="fileManagerStatus" class="text-[10px] text-slate-400">Files are stored in this browser profile. Clearing browser site data can erase them.</div>
                 </div>
             </div>
 
-            <!-- POLARIS PEOPLE: add friends by handle -->
+            <!-- POLARIS PEOPLE -->
             <div id="peopleWindow" class="os-window hidden w-[720px] h-[520px] top-16 left-36" style="z-index:105;">
-                <div class="window-header px-4 py-3 flex items-center justify-between" onmousedown="dragMouseDown(event,'peopleWindow')"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-fuchsia-500/25 to-violet-500/25 border border-fuchsia-300/30 grid place-items-center text-fuchsia-200"><i data-lucide="users" class="w-5 h-5"></i></div><div><div class="text-sm font-extrabold text-white">Polaris People</div><div class="text-[10px] text-slate-400">Find people and manage friend requests</div></div></div><div class="flex gap-1.5"><button onclick="minimizeWindow('peopleWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="minus" class="w-4 h-4"></i></button><button onclick="toggleWindowFullscreen('peopleWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="maximize-2" class="w-4 h-4"></i></button><button onclick="closeWindow('peopleWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="x" class="w-4 h-4"></i></button></div></div>
-                <div class="flex-1 min-h-0 overflow-y-auto p-5 bg-slate-950/90"><div class="rounded-2xl border border-fuchsia-400/20 bg-gradient-to-r from-fuchsia-500/10 to-cyan-500/10 p-4 mb-4"><div class="text-sm font-bold text-white mb-1">Add people</div><p class="text-[11px] text-slate-400 mb-3">Search by their Polaris handle, then send a friend request.</p><div class="flex gap-2"><input id="peopleSearchInput" placeholder="Search handle…" oninput="renderPeople()" class="flex-1 min-w-0 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-fuchsia-400"><button onclick="publishMyProfile();renderPeople()" class="px-4 py-2 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white text-xs font-bold">Refresh</button></div></div><div class="grid md:grid-cols-2 gap-4"><section><h3 class="text-xs uppercase tracking-widest text-cyan-300 font-bold mb-3">People on Polaris</h3><div id="peopleDirectory" class="space-y-2"><div class="store-empty">Connecting to people directory…</div></div></section><section><h3 class="text-xs uppercase tracking-widest text-violet-300 font-bold mb-3">Friend requests</h3><div id="peopleRequests" class="space-y-2"><div class="store-empty">No requests loaded yet.</div></div><h3 class="text-xs uppercase tracking-widest text-emerald-300 font-bold mt-5 mb-3">Your friends</h3><div id="peopleFriends" class="space-y-2"></div></section></div><div id="peopleStatus" class="text-[10px] text-slate-500 mt-4">Only share your handle with people you know.</div></div>
+                <div class="window-header px-4 py-3 flex items-center justify-between" onmousedown="dragMouseDown(event,'peopleWindow')"><div class="flex items-center gap-3"><div class="w-9 h-9 rounded-xl bg-gradient-to-br from-fuchsia-500/25 to-violet-500/25 border border-fuchsia-300/30 grid place-items-center text-fuchsia-200"><i data-lucide="users" class="w-5 h-5"></i></div><div><div class="text-sm font-extrabold text-white">Polaris People</div><div class="text-[10px] text-slate-400">Directory & Friends</div></div></div><div class="flex gap-1.5"><button onclick="minimizeWindow('peopleWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="minus" class="w-4 h-4"></i></button><button onclick="toggleWindowFullscreen('peopleWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="maximize-2" class="w-4 h-4"></i></button><button onclick="closeWindow('peopleWindow')" class="p-1.5 rounded-lg hover:bg-slate-700 text-slate-400"><i data-lucide="x" class="w-4 h-4"></i></button></div></div>
+                <div class="flex-1 min-h-0 overflow-y-auto p-5 bg-slate-950/90"><div class="rounded-2xl border border-fuchsia-400/20 bg-gradient-to-r from-fuchsia-500/10 to-cyan-500/10 p-4 mb-4"><div class="text-sm font-bold text-white mb-1">Add people</div><p class="text-[11px] text-slate-400 mb-3">Search by handle and send friend requests.</p><div class="flex gap-2"><input id="peopleSearchInput" placeholder="Search handle…" oninput="renderPeople()" class="flex-1 min-w-0 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white outline-none focus:border-fuchsia-400"><button onclick="publishMyProfile();renderPeople()" class="px-4 py-2 rounded-xl bg-fuchsia-600 hover:bg-fuchsia-500 text-white text-xs font-bold">Refresh</button></div></div><div class="grid md:grid-cols-2 gap-4"><section><h3 class="text-xs uppercase tracking-widest text-cyan-300 font-bold mb-3">People on Polaris</h3><div id="peopleDirectory" class="space-y-2"><div class="store-empty">Connecting…</div></div></section><section><h3 class="text-xs uppercase tracking-widest text-violet-300 font-bold mb-3">Requests</h3><div id="peopleRequests" class="space-y-2"></div><h3 class="text-xs uppercase tracking-widest text-emerald-300 font-bold mt-5 mb-3">Friends</h3><div id="peopleFriends" class="space-y-2"></div></section></div><div id="peopleStatus" class="text-[10px] text-slate-500 mt-4"></div></div>
             </div>
 
             <!-- WINDOW 1: BROWSER -->
@@ -422,7 +454,7 @@
                 <div class="window-header px-4 py-2.5 flex items-center justify-between" onmousedown="dragMouseDown(event, 'browserWindow')">
                     <div class="flex items-center gap-2">
                         <i data-lucide="globe" class="w-4 h-4 text-sky-400"></i>
-                        <span class="text-xs font-bold text-white">Polaris Browser v2.2</span>
+                        <span class="text-xs font-bold text-white">Polaris Browser v3.0</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <button onclick="minimizeWindow('browserWindow')" class="p-1 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button>
@@ -445,12 +477,12 @@
                 </div>
             </div>
 
-            <!-- WINDOW 2: FIREBASE REALTIME CHAT -->
-            <div id="chatWindow" class="os-window hidden w-[780px] h-[520px] top-16 left-40" style="z-index: 101;">
-                <div class="window-header px-4 py-2.5 flex items-center justify-between" onmousedown="dragMouseDown(event, 'chatWindow')">
+            <!-- ================= DISCORD-STYLE CHAT WINDOW ================= -->
+            <div id="chatWindow" class="os-window hidden w-[900px] h-[580px] top-14 left-32" style="z-index: 101;">
+                <div class="window-header px-4 py-2.5 flex items-center justify-between bg-[#202225] border-b border-[#18191c]" onmousedown="dragMouseDown(event, 'chatWindow')">
                     <div class="flex items-center gap-2">
-                        <i data-lucide="message-square" class="w-4 h-4 text-purple-400"></i>
-                        <span class="text-xs font-bold text-white">Firebase Realtime Chat</span>
+                        <span class="text-base font-bold text-purple-400">#</span>
+                        <span id="activeChannelTitle" class="text-xs font-bold text-white">general-lounge</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <button onclick="minimizeWindow('chatWindow')" class="p-1 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button>
@@ -458,23 +490,48 @@
                         <button onclick="closeWindow('chatWindow')" class="p-1 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white"><i data-lucide="x" class="w-3.5 h-3.5"></i></button>
                     </div>
                 </div>
-                <div class="flex-1 flex flex-col bg-[#0b1120] overflow-hidden">
-                    <div id="chatMessagesList" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs"></div>
-                    <div class="p-3 border-t border-slate-800 flex flex-wrap gap-2 bg-slate-900/80">
-                        <label class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-200 text-xs font-semibold cursor-pointer flex items-center gap-2" title="Share a small file in chat"><i data-lucide="paperclip" class="w-4 h-4"></i> Attach<input id="chatAttachmentInput" type="file" class="hidden" onchange="shareChatFile()"></label>
-                        <input type="text" id="chatInput" onkeydown="if(event.key==='Enter')sendFirebaseChatMessage()" placeholder="Message everyone…" class="flex-1 min-w-[120px] bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none">
-                        <button onclick="sendFirebaseChatMessage()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:brightness-110 text-white font-semibold text-xs">Send</button>
+                <!-- Discord Layout Container -->
+                <div class="flex-1 flex bg-[#313338] text-[#dbdee1] overflow-hidden text-xs">
+                    <!-- Channels Sidebar -->
+                    <div class="w-56 bg-[#2b2d31] flex flex-col border-r border-[#1f2023] shrink-0">
+                        <div class="p-3.5 font-bold text-white border-b border-[#1f2023] flex items-center justify-between">
+                            <span>Polaris Servers</span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        </div>
+                        <div class="p-2 space-y-0.5 flex-1 overflow-y-auto">
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2 py-1.5">Text Channels</div>
+                            <button onclick="switchDiscordChannel('general')" id="chanBtn_general" class="w-full text-left px-2.5 py-2 rounded-lg bg-[#3f4248] text-white font-semibold flex items-center gap-2"><span class="text-slate-400">#</span> general-lounge</button>
+                            <button onclick="switchDiscordChannel('dev')" id="chanBtn_dev" class="w-full text-left px-2.5 py-2 rounded-lg hover:bg-[#35373c] text-slate-300 font-semibold flex items-center gap-2"><span class="text-slate-400">#</span> dev-chat</button>
+                            <button onclick="switchDiscordChannel('announcements')" id="chanBtn_announcements" class="w-full text-left px-2.5 py-2 rounded-lg hover:bg-[#35373c] text-slate-300 font-semibold flex items-center gap-2"><span class="text-slate-400">#</span> announcements</button>
+                        </div>
+                        <div class="p-2.5 bg-[#232428] border-t border-[#1f2023] flex items-center justify-between">
+                            <div class="flex items-center gap-2 truncate">
+                                <div class="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center font-bold text-white shrink-0" id="discordUserAvatar">W</div>
+                                <div class="truncate"><div class="font-bold text-white text-xs truncate" id="discordUserName">William</div><div class="text-[10px] text-emerald-400">Online</div></div>
+                            </div>
+                        </div>
                     </div>
-                    <div id="chatFileStatus" class="px-4 pb-2 bg-slate-900/80 text-[10px] text-slate-400"></div>
+                    <!-- Chat Area -->
+                    flex-1 flex flex-col bg-[#313338] overflow-hidden relative">
+                        <div id="chatMessagesList" class="flex-1 p-4 overflow-y-auto space-y-4"></div>
+                        <div id="chatFileStatus" class="px-4 py-1 bg-[#2b2d31] text-[10px] text-indigo-300 hidden"></div>
+                        <div class="p-4 bg-[#313338]">
+                            <div class="bg-[#383a40] rounded-xl p-2.5 flex items-center gap-3 border border-transparent focus-within:border-indigo-500 transition">
+                                <label class="cursor-pointer text-slate-400 hover:text-white p-1" title="Attach file"><i data-lucide="plus-circle" class="w-5 h-5"></i><input id="chatAttachmentInput" type="file" class="hidden" onchange="shareChatFile()"></label>
+                                <input type="text" id="chatInput" onkeydown="if(event.key==='Enter')sendFirebaseChatMessage()" placeholder="Message #general-lounge…" class="flex-1 bg-transparent text-white focus:outline-none text-xs">
+                                <button onclick="sendFirebaseChatMessage()" class="px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-semibold">Send</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- WINDOW 3: FULLY FUNCTIONAL MAIL CLIENT -->
-            <div id="mailWindow" class="os-window hidden w-[820px] h-[540px] top-20 left-48" style="z-index: 102;">
-                <div class="window-header px-4 py-2.5 flex items-center justify-between" onmousedown="dragMouseDown(event, 'mailWindow')">
+            <!-- ================= MODERN OUTLOOK/PROTON MAIL CLIENT ================= -->
+            <div id="mailWindow" class="os-window hidden w-[880px] h-[580px] top-16 left-44" style="z-index: 102;">
+                <div class="window-header px-4 py-2.5 flex items-center justify-between bg-slate-900 border-b border-slate-800" onmousedown="dragMouseDown(event, 'mailWindow')">
                     <div class="flex items-center gap-2">
                         <i data-lucide="mail" class="w-4 h-4 text-indigo-400"></i>
-                        <span class="text-xs font-bold text-white">Polaris Mail (<span id="userMailHandle" class="mono text-sky-400">william@polaris</span>)</span>
+                        <span class="text-xs font-bold text-white">Polaris Mail (<span id="userMailHandle" class="mono text-sky-400">user@polaris</span>)</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <button onclick="minimizeWindow('mailWindow')" class="p-1 rounded-lg hover:bg-slate-700 text-slate-400 hover:text-white"><i data-lucide="minus" class="w-3.5 h-3.5"></i></button>
@@ -483,37 +540,45 @@
                     </div>
                 </div>
 
-                <div class="flex-1 flex bg-[#0b1120] overflow-hidden text-xs">
-                    <div class="w-52 border-r border-slate-800 p-3 flex flex-col gap-2 shrink-0">
-                        <button onclick="showComposeMailView()" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs flex items-center justify-center gap-2 mb-2 shadow-lg shadow-indigo-500/20 transition">
-                            <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i> Compose Mail
+                <div class="flex-1 flex bg-[#0f172a] overflow-hidden text-xs">
+                    <!-- Mail Sidebar -->
+                    <div class="w-56 border-r border-slate-800/80 p-3.5 flex flex-col gap-3 bg-slate-900/60 shrink-0">
+                        <button onclick="showComposeMailView()" class="w-full py-3 rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 hover:brightness-110 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/25 transition">
+                            <i data-lucide="pen-tool" class="w-4 h-4"></i> New Message
                         </button>
                         <div class="space-y-1">
-                            <button onclick="switchMailTab('inbox')" id="mailInboxBtn" class="w-full p-2.5 rounded-xl bg-slate-800/80 text-white font-semibold flex items-center justify-between cursor-pointer">
-                                <span class="flex items-center gap-2"><i data-lucide="inbox" class="w-3.5 h-3.5 text-sky-400"></i> Inbox</span>
-                                <span id="mailInboxBadge" class="px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-400 text-[10px] font-mono">0</span>
+                            <button onclick="switchMailTab('inbox')" id="mailInboxBtn" class="w-full p-2.5 rounded-xl bg-indigo-600/20 text-indigo-300 font-semibold flex items-center justify-between cursor-pointer border border-indigo-500/30">
+                                <span class="flex items-center gap-2"><i data-lucide="inbox" class="w-4 h-4 text-indigo-400"></i> Inbox</span>
+                                <span id="mailInboxBadge" class="px-2 py-0.5 rounded-full bg-indigo-500/30 text-indigo-200 text-[10px] font-mono">0</span>
                             </button>
-                            <button onclick="switchMailTab('sent')" id="mailSentBtn" class="w-full p-2.5 rounded-xl text-slate-400 hover:bg-slate-900/60 flex items-center gap-2 cursor-pointer">
-                                <i data-lucide="send" class="w-3.5 h-3.5"></i> Sent Messages
+                            <button onclick="switchMailTab('sent')" id="mailSentBtn" class="w-full p-2.5 rounded-xl text-slate-400 hover:bg-slate-800/50 flex items-center gap-2 cursor-pointer">
+                                <i data-lucide="send" class="w-4 h-4"></i> Sent Messages
                             </button>
                         </div>
                     </div>
 
-                    <div class="flex-1 flex flex-col overflow-hidden bg-slate-900/40">
-                        <div id="mailComposePane" class="hidden p-5 flex-1 flex flex-col gap-3">
-                            <h3 class="text-sm font-bold text-white mb-1">New Cloud Message</h3>
-                            <div class="flex gap-2"><input type="text" id="mailRecipient" list="polarisContactHandles" placeholder="To: friend@polaris" class="flex-1 min-w-0 bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-400 mono"><datalist id="polarisContactHandles"></datalist><button type="button" onclick="openWindow('peopleWindow')" class="px-3 rounded-xl bg-slate-800 border border-slate-700 text-cyan-200 text-xs">People</button></div>
-                            <input type="text" id="mailSubject" placeholder="Subject" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-indigo-400">
-                            <textarea id="mailBody" rows="7" maxlength="6000" oninput="document.getElementById('mailBodyCount').textContent=this.value.length+' / 6000'" placeholder="Write your message…" class="w-full flex-1 bg-slate-900 border border-slate-700 rounded-xl p-3 text-xs text-white focus:outline-none focus:border-indigo-400"></textarea><div id="mailBodyCount" class="text-[10px] text-slate-500 text-right">0 / 6000</div>
-                            <div class="flex justify-end gap-2 pt-2">
-                                <button onclick="hideComposeMailView()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300">Cancel</button>
-                                <button onclick="sendFirebaseMail()" class="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold flex items-center gap-1.5">
-                                    <i data-lucide="send" class="w-3.5 h-3.5"></i> Send Cloud Mail
-                                </button>
+                    <!-- Mail Content Area -->
+                    <div class="flex-1 flex flex-col overflow-hidden bg-slate-950/40 relative">
+                        <div id="mailComposePane" class="hidden p-6 flex-1 flex flex-col gap-4 bg-slate-900/90 absolute inset-0 z-20 overflow-y-auto">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                                <h3 class="text-sm font-bold text-white">Compose Cloud Message</h3>
+                                <button onclick="hideComposeMailView()" class="text-slate-400 hover:text-white"><i data-lucide="x" class="w-4 h-4"></i></button>
+                            </div>
+                            <div class="flex gap-2"><input type="text" id="mailRecipient" list="polarisContactHandles" placeholder="To: friend@polaris" class="flex-1 min-w-0 bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-400 mono"><datalist id="polarisContactHandles"></datalist><button type="button" onclick="openWindow('peopleWindow')" class="px-3 rounded-xl bg-slate-800 border border-slate-700 text-cyan-200 text-xs">Contacts</button></div>
+                            <input type="text" id="mailSubject" placeholder="Subject" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none focus:border-indigo-400">
+                            <textarea id="mailBody" rows="8" maxlength="6000" oninput="document.getElementById('mailBodyCount').textContent=this.value.length+' / 6000'" placeholder="Write your message here…" class="w-full flex-1 bg-slate-950 border border-slate-700 rounded-xl p-3.5 text-xs text-white focus:outline-none focus:border-indigo-400"></textarea>
+                            <div class="flex justify-between items-center pt-2">
+                                <span id="mailBodyCount" class="text-[10px] text-slate-500">0 / 6000</span>
+                                <div class="flex gap-2">
+                                    <button onclick="hideComposeMailView()" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300">Cancel</button>
+                                    <button onclick="sendFirebaseMail()" class="px-6 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold flex items-center gap-1.5 shadow-lg shadow-indigo-500/20">
+                                        <i data-lucide="send" class="w-3.5 h-3.5"></i> Send Email
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
-                        <div id="mailListPane" class="flex-1 p-4 overflow-y-auto space-y-2"></div>
+                        <div id="mailListPane" class="flex-1 p-5 overflow-y-auto space-y-3"></div>
                     </div>
                 </div>
             </div>
@@ -557,7 +622,7 @@
                 <button onclick="openWindow('filesWindow'); toggleStartMenu();" class="w-full p-2.5 rounded-2xl hover:bg-slate-800/80 text-slate-200 flex items-center gap-3"><i data-lucide="folder-open" class="w-4 h-4 text-cyan-300"></i> Polaris Files</button>
                 <button onclick="openWindow('peopleWindow'); toggleStartMenu();" class="w-full p-2.5 rounded-2xl hover:bg-slate-800/80 text-slate-200 flex items-center gap-3"><i data-lucide="users" class="w-4 h-4 text-fuchsia-300"></i> People & Friends</button>
                 <button onclick="openWindow('osStoreModal'); toggleStartMenu();" class="w-full p-2.5 rounded-2xl hover:bg-slate-800/80 text-slate-200 flex items-center gap-3">
-                    <i data-lucide="store" class="w-4 h-4 text-amber-400"></i> OS Store & Customization
+                    <i data-lucide="store" class="w-4 h-4 text-amber-400"></i> Global App Store & Settings
                 </button>
             </div>
         </div>
@@ -671,6 +736,8 @@
             document.getElementById('userMailHandle').textContent = handle;
             document.getElementById('startMenuUser').textContent = currentUser;
             document.getElementById('startMenuHandle').textContent = handle;
+            document.getElementById('discordUserName').textContent = currentUser;
+            document.getElementById('discordUserAvatar').textContent = currentUser.charAt(0).toUpperCase();
             setTimeout(() => {
                 if (window.currentAuthUser) {
                     document.getElementById('adminUidVal').textContent = window.currentAuthUser.uid;
@@ -710,8 +777,6 @@
             const status = document.getElementById('adminBroadcastInput');
             if (!msg) { alert('Enter a broadcast message first.'); return; }
             if (!window.firebaseApp) { alert('Firebase is still connecting. Try again shortly.'); return; }
-            // This client-side PIN is only a UI gate, not real authorization.
-            // The Firebase Realtime Database rules must restrict system/broadcast writes to trusted admins.
             const { db, ref, set } = window.firebaseApp;
             set(ref(db, 'system/broadcast'), { message: msg.slice(0, 500), timestamp: Date.now(), sender: currentUser || 'Admin' })
                 .then(() => {
@@ -720,7 +785,7 @@
                 })
                 .catch((error) => {
                     console.error(error);
-                    alert('Broadcast rejected by Firebase rules or network error. Check your admin permissions and database rules.');
+                    alert('Broadcast rejected by Firebase rules.');
                 });
         }
 
@@ -728,39 +793,75 @@
             document.getElementById('liveBroadcastBanner').classList.add('hidden');
         }
 
-        // Firebase Chat & Mail System
+        // Discord-Style Chat System
+        let activeDiscordChannel = 'general';
+        function switchDiscordChannel(chan) {
+            activeDiscordChannel = chan;
+            ['general', 'dev', 'announcements'].forEach(c => {
+                const btn = document.getElementById('chanBtn_' + c);
+                if(btn) {
+                    if(c === chan) {
+                        btn.className = "w-full text-left px-2.5 py-2 rounded-lg bg-[#3f4248] text-white font-semibold flex items-center gap-2";
+                    } else {
+                        btn.className = "w-full text-left px-2.5 py-2 rounded-lg hover:bg-[#35373c] text-slate-300 font-semibold flex items-center gap-2";
+                    }
+                }
+            });
+            document.getElementById('activeChannelTitle').textContent = chan === 'general' ? 'general-lounge' : chan === 'dev' ? 'dev-chat' : 'announcements';
+            initFirebaseChat();
+        }
+
         function initFirebaseChat() {
             const chatCheck = setInterval(() => {
                 if (window.firebaseApp) {
                     const { db, ref, onValue } = window.firebaseApp;
-                    onValue(ref(db, 'public_chat'), (snapshot) => {
+                    onValue(ref(db, 'public_chat/' + activeDiscordChannel), (snapshot) => {
                         const list = document.getElementById('chatMessagesList');
                         if(!list) return;
                         list.innerHTML = '';
                         if (!snapshot.exists()) {
-                            list.innerHTML = '<div class="text-slate-500 text-center py-4">No messages yet in Firebase cloud.</div>';
+                            list.innerHTML = `<div class="text-slate-500 text-center py-6">Welcome to #${activeDiscordChannel === 'general' ? 'general-lounge' : activeDiscordChannel === 'dev' ? 'dev-chat' : 'announcements'}! This is the start of the channel.</div>`;
                             return;
                         }
                         snapshot.forEach((childSnap) => {
                             const msg = childSnap.val();
-                            const div = document.createElement('div');
-                            div.className = "p-3 rounded-2xl bg-slate-900/80 border border-slate-800";
-                            const sender = document.createElement('span');
-                            sender.className = "font-bold text-sky-400 mono";
-                            sender.textContent = String(msg.senderName || "Unknown");
-                            const messageText = document.createElement('span');
-                            messageText.className = "text-slate-200";
-                            messageText.textContent = String(msg.message || "");
-                            div.append(sender, document.createTextNode(": "), messageText);
+                            const msgDiv = document.createElement('div');
+                            msgDiv.className = "flex items-start gap-3 group hover:bg-[#2e3035] -mx-4 px-4 py-1.5 rounded-lg transition";
+                            
+                            const avatar = document.createElement('div');
+                            avatar.className = "w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white shrink-0 mt-0.5";
+                            avatar.textContent = String(msg.senderName || 'U').charAt(0).toUpperCase();
+
+                            const content = document.createElement('div');
+                            content.className = "flex-1 min-w-0";
+                            
+                            const header = document.createElement('div');
+                            header.className = "flex items-baseline gap-2";
+                            const name = document.createElement('span');
+                            name.className = "font-bold text-white text-xs hover:underline cursor-pointer";
+                            name.textContent = String(msg.senderName || 'Unknown');
+                            const time = document.createElement('span');
+                            time.className = "text-[10px] text-slate-400";
+                            time.textContent = new Date(msg.timestamp || Date.now()).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+                            header.append(name, time);
+
+                            const text = document.createElement('div');
+                            text.className = "text-slate-200 text-xs mt-0.5 break-words whitespace-pre-wrap";
+                            text.textContent = String(msg.message || '');
+                            content.append(header, text);
+
                             if (msg.attachment && msg.attachment.dataUrl) {
                                 const attachment = document.createElement('a');
-                                attachment.href = msg.attachment.dataUrl; attachment.download = String(msg.attachment.name || 'shared-file').replace(/[^a-z0-9._ -]/gi, '_'); attachment.rel = 'noopener';
-                                attachment.className = 'mt-2 flex items-center gap-2 rounded-xl border border-cyan-400/20 bg-cyan-400/5 px-3 py-2 text-cyan-200 no-underline';
-                                const icon = document.createElement('span'); icon.textContent = '↧'; icon.className = 'text-lg';
-                                const fileLabel = document.createElement('span'); fileLabel.textContent = `${msg.attachment.name || 'Shared file'} · ${formatBytes(msg.attachment.size || 0)}`; fileLabel.className = 'break-all';
-                                attachment.append(icon, fileLabel); div.appendChild(attachment);
+                                attachment.href = msg.attachment.dataUrl; 
+                                attachment.download = String(msg.attachment.name || 'shared-file').replace(/[^a-z0-9._ -]/gi, '_'); 
+                                attachment.rel = 'noopener';
+                                attachment.className = 'mt-2 inline-flex items-center gap-2 rounded-xl border border-indigo-500/30 bg-indigo-500/10 px-3 py-2 text-indigo-200 no-underline hover:bg-indigo-500/20';
+                                attachment.innerHTML = `<span class="text-sm">📎</span><span>${msg.attachment.name} (${formatBytes(msg.attachment.size || 0)})</span>`;
+                                content.appendChild(attachment);
                             }
-                            list.appendChild(div);
+
+                            msgDiv.append(avatar, content);
+                            list.appendChild(msgDiv);
                         });
                         list.scrollTop = list.scrollHeight;
                     });
@@ -770,16 +871,25 @@
         }
 
         async function shareChatFile() {
-            const input=document.getElementById('chatAttachmentInput'), status=document.getElementById('chatFileStatus'), file=input.files&&input.files[0];
+            const input = document.getElementById('chatAttachmentInput'), status = document.getElementById('chatFileStatus'), file = input.files && input.files[0];
             if(!file) return;
             try {
-                if(file.size > 45*1024) throw new Error('Chat sharing supports files up to 45 KB so the live database stays lightweight. Save larger files in Polaris Files and share a link instead.');
-                if(!window.firebaseApp || !window.currentAuthUser) throw new Error('Polaris is still connecting. Try again in a moment.');
-                const dataUrl=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result));r.onerror=()=>reject(r.error);r.readAsDataURL(file);});
-                const {db,ref,push,set}=window.firebaseApp, uid=window.currentAuthUser.uid, msgRef=push(ref(db,'public_chat'));
-                await set(msgRef,{senderUid:uid,senderName:currentUser||'Polaris user',message:'Shared a file',timestamp:Date.now(),attachment:{name:file.name,type:file.type||'application/octet-stream',size:file.size,dataUrl}});
-                status.textContent=`Shared ${file.name} in chat.`; input.value='';
-            } catch(e) { status.textContent=e.message||'Could not share that file.'; }
+                if(file.size > 45*1024) throw new Error('Attachments are limited to 45 KB for real-time cloud performance.');
+                if(!window.firebaseApp || !window.currentAuthUser) throw new Error('Firebase connection initializing.');
+                const dataUrl = await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result));r.onerror=()=>reject(r.error);r.readAsDataURL(file);});
+                const {db, ref, push, set} = window.firebaseApp; 
+                const msgRef = push(ref(db, 'public_chat/' + activeDiscordChannel));
+                await set(msgRef, {
+                    senderUid: window.currentAuthUser.uid,
+                    senderName: currentUser || 'William',
+                    message: 'Shared a file: ' + file.name,
+                    timestamp: Date.now(),
+                    attachment: { name: file.name, size: file.size, dataUrl }
+                });
+                status.textContent = `Attached ${file.name}`;
+                status.classList.remove('hidden');
+                input.value = '';
+            } catch(e) { alert(e.message || 'Attachment failed.'); }
         }
 
         function sendFirebaseChatMessage() {
@@ -790,7 +900,7 @@
             const { db, ref, push, set } = window.firebaseApp;
             const uid = window.currentAuthUser ? window.currentAuthUser.uid : 'guest_node';
             
-            const newMsgRef = push(ref(db, 'public_chat'));
+            const newMsgRef = push(ref(db, 'public_chat/' + activeDiscordChannel));
             set(newMsgRef, {
                 senderUid: uid,
                 senderName: currentUser || 'William',
@@ -800,18 +910,18 @@
             input.value = '';
         }
 
-        // Functional Mail Sync via Firebase
+        // Modern Mail Client Sync via Firebase
         let activeMailTab = 'inbox';
         function switchMailTab(tab) {
             activeMailTab = tab;
             const inboxBtn = document.getElementById('mailInboxBtn');
             const sentBtn = document.getElementById('mailSentBtn');
             if (tab === 'inbox') {
-                inboxBtn.className = "w-full p-2.5 rounded-xl bg-slate-800/80 text-white font-semibold flex items-center justify-between cursor-pointer";
-                sentBtn.className = "w-full p-2.5 rounded-xl text-slate-400 hover:bg-slate-900/60 flex items-center gap-2 cursor-pointer";
+                inboxBtn.className = "w-full p-2.5 rounded-xl bg-indigo-600/20 text-indigo-300 font-semibold flex items-center justify-between cursor-pointer border border-indigo-500/30";
+                sentBtn.className = "w-full p-2.5 rounded-xl text-slate-400 hover:bg-slate-800/50 flex items-center gap-2 cursor-pointer";
             } else {
-                sentBtn.className = "w-full p-2.5 rounded-xl bg-slate-800/80 text-white font-semibold flex items-center gap-2 cursor-pointer";
-                inboxBtn.className = "w-full p-2.5 rounded-xl text-slate-400 hover:bg-slate-900/60 flex items-center justify-between cursor-pointer";
+                sentBtn.className = "w-full p-2.5 rounded-xl bg-indigo-600/20 text-indigo-300 font-semibold flex items-center justify-between cursor-pointer border border-indigo-500/30";
+                inboxBtn.className = "w-full p-2.5 rounded-xl text-slate-400 hover:bg-slate-800/50 flex items-center gap-2 cursor-pointer";
             }
             hideComposeMailView();
             loadFirebaseMails();
@@ -819,12 +929,10 @@
 
         function showComposeMailView() {
             document.getElementById('mailComposePane').classList.remove('hidden');
-            document.getElementById('mailListPane').classList.add('hidden');
         }
 
         function hideComposeMailView() {
             document.getElementById('mailComposePane').classList.add('hidden');
-            document.getElementById('mailListPane').classList.remove('hidden');
         }
 
         function sendFirebaseMail() {
@@ -852,7 +960,7 @@
                 document.getElementById('mailRecipient').value = '';
                 document.getElementById('mailSubject').value = '';
                 document.getElementById('mailBody').value = '';
-                const counter=document.getElementById('mailBodyCount'); if(counter) counter.textContent='0 / 6000';
+                const counter = document.getElementById('mailBodyCount'); if(counter) counter.textContent = '0 / 6000';
                 hideComposeMailView();
                 switchMailTab('sent');
             });
@@ -877,7 +985,7 @@
                 if (!pane) return;
                 pane.innerHTML = '';
                 if (!snapshot.exists()) {
-                    pane.innerHTML = '<div class="text-center py-10 text-slate-500">No cloud messages found.</div>';
+                    pane.innerHTML = '<div class="text-center py-12 text-slate-500">No cloud messages found in this folder.</div>';
                     return;
                 }
 
@@ -890,56 +998,68 @@
                     if (isInbox || isSent) {
                         count++;
                         const card = document.createElement('div');
-                        card.className = "p-4 rounded-2xl bg-gradient-to-br from-slate-900/90 to-indigo-950/25 border border-slate-800 hover:border-indigo-400/50 hover:-translate-y-0.5 transition mb-2 shadow-lg shadow-black/10";
+                        card.className = "p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-indigo-500/50 transition shadow-lg";
+                        
                         const meta = document.createElement('div');
-                        meta.className = "flex justify-between items-center mb-1";
+                        meta.className = "flex justify-between items-center mb-1.5";
                         const senderLabel = document.createElement('span');
-                        senderLabel.className = "font-bold text-sky-400 mono";
+                        senderLabel.className = "font-bold text-indigo-300 mono";
                         senderLabel.textContent = (activeMailTab === 'inbox' ? 'From: ' + m.sender : 'To: ' + m.recipient);
                         const timeLabel = document.createElement('span');
                         timeLabel.className = "text-[10px] text-slate-500";
                         timeLabel.textContent = new Date(m.timestamp).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                         meta.append(senderLabel, timeLabel);
+
                         const subjectLabel = document.createElement('h4');
-                        subjectLabel.className = "font-semibold text-white mb-1";
+                        subjectLabel.className = "font-bold text-white text-sm mb-1";
                         subjectLabel.textContent = String(m.subject || "");
+
                         const bodyLabel = document.createElement('p');
-                        bodyLabel.className = "text-slate-300 text-[11px] leading-relaxed whitespace-pre-wrap";
+                        bodyLabel.className = "text-slate-300 text-xs leading-relaxed whitespace-pre-wrap bg-slate-950/40 p-3 rounded-xl border border-slate-800/80";
                         bodyLabel.textContent = String(m.body || "");
-                        const reply = document.createElement('button'); reply.className = 'mt-3 px-3 py-1.5 rounded-lg bg-indigo-500/15 border border-indigo-400/20 text-indigo-200 text-[10px] font-bold'; reply.textContent = 'Reply';
-                        reply.onclick = () => { document.getElementById('mailRecipient').value = String(m.sender || '').replace(/[^a-z0-9@._-]/gi,''); document.getElementById('mailSubject').value = /^re:/i.test(m.subject||'') ? m.subject : 'Re: ' + String(m.subject||''); showComposeMailView(); document.getElementById('mailBody').focus(); };
-                        card.append(meta, subjectLabel, bodyLabel, reply);
+
+                        const replyBtn = document.createElement('button'); 
+                        replyBtn.className = 'mt-3 px-3.5 py-1.5 rounded-xl bg-indigo-600/20 border border-indigo-500/30 text-indigo-300 text-xs font-bold hover:bg-indigo-600/30 transition'; 
+                        replyBtn.textContent = 'Reply';
+                        replyBtn.onclick = () => { 
+                            document.getElementById('mailRecipient').value = String(m.sender || '').replace(/[^a-z0-9@._-]/gi,''); 
+                            document.getElementById('mailSubject').value = /^re:/i.test(m.subject||'') ? m.subject : 'Re: ' + String(m.subject||''); 
+                            showComposeMailView(); 
+                            document.getElementById('mailBody').focus(); 
+                        };
+
+                        card.append(meta, subjectLabel, bodyLabel, replyBtn);
                         pane.appendChild(card);
                     }
                 });
 
                 if (count === 0) {
-                    pane.innerHTML = '<div class="text-center py-10 text-slate-500">No messages in ' + activeMailTab + '.</div>';
+                    pane.innerHTML = '<div class="text-center py-12 text-slate-500">No messages in ' + activeMailTab + '.</div>';
                 }
-                document.getElementById('mailInboxBadge').textContent = count;
+                const badge = document.getElementById('mailInboxBadge');
+                if(badge) badge.textContent = count;
             });
         }
 
-
-        // Polaris Files: general-purpose local file system stored in IndexedDB (binary Blobs supported).
+        // Polaris Files IndexedDB
         const FILE_DB_NAME='polaris-filesystem', FILE_DB_VERSION=1;
         let activeFileFolder='*', cachedUserFiles=[];
-        function openFileDatabase(){return new Promise((resolve,reject)=>{const req=indexedDB.open(FILE_DB_NAME,FILE_DB_VERSION);req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('files')){const st=db.createObjectStore('files',{keyPath:'id'});st.createIndex('folder','folder',{unique:false});}};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('Could not open IndexedDB file system.'));});}
+        function openFileDatabase(){return new Promise((resolve,reject)=>{const req=indexedDB.open(FILE_DB_NAME,FILE_DB_VERSION);req.onupgradeneeded=()=>{const db=req.result;if(!db.objectStoreNames.contains('files')){const st=db.createObjectStore('files',{keyPath:'id'});st.createIndex('folder','folder',{unique:false});}};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error||new Error('IndexedDB error'));});}
         async function userFilesAll(){const db=await openFileDatabase();return new Promise((resolve,reject)=>{const tx=db.transaction('files','readonly'),r=tx.objectStore('files').getAll();r.onsuccess=()=>{db.close();resolve(r.result||[])};r.onerror=()=>{db.close();reject(r.error)}})}
         async function userFilePut(file){const db=await openFileDatabase();return new Promise((resolve,reject)=>{const tx=db.transaction('files','readwrite');tx.objectStore('files').put(file);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}})}
         async function userFileDelete(id){const db=await openFileDatabase();return new Promise((resolve,reject)=>{const tx=db.transaction('files','readwrite');tx.objectStore('files').delete(id);tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>{db.close();reject(tx.error)}})}
         function fileId(){return 'file_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,8)}
         function setFileFolder(folder){activeFileFolder=folder;renderUserFiles()}
-        async function importUserFiles(){const input=document.getElementById('fileManagerInput'),status=document.getElementById('fileManagerStatus'),folder=String(document.getElementById('fileFolderInput').value||'').trim().replace(/[<>]/g,'').slice(0,40),files=Array.from(input.files||[]);if(!files.length)return;try{for(const file of files){if(file.size>25*1024*1024)throw new Error(file.name+' is over the 25 MB per-file limit.');await userFilePut({id:fileId(),name:file.name,folder, type:file.type||'application/octet-stream',size:file.size,blob:file,modified:file.lastModified||Date.now(),savedAt:Date.now()});}status.textContent=`Imported ${files.length} file${files.length===1?'':'s'} into IndexedDB.`;input.value='';await renderUserFiles()}catch(e){status.textContent=e.message||'Import failed.'}}
+        async function importUserFiles(){const input=document.getElementById('fileManagerInput'),folder=String(document.getElementById('fileFolderInput').value||'').trim().replace(/[<>]/g,'').slice(0,40),files=Array.from(input.files||[]);if(!files.length)return;try{for(const file of files){if(file.size>25*1024*1024)throw new Error(file.name+' exceeds 25 MB limit.');await userFilePut({id:fileId(),name:file.name,folder, type:file.type||'application/octet-stream',size:file.size,blob:file,modified:file.lastModified||Date.now(),savedAt:Date.now()});}input.value='';await renderUserFiles()}catch(e){alert(e.message||'Import failed.')}}
         function fileAction(label,fn,cls=''){const b=document.createElement('button');b.className='px-2.5 py-1.5 rounded-lg text-[10px] font-bold border '+(cls||'border-slate-700 bg-slate-800 text-slate-200');b.textContent=label;b.onclick=fn;return b}
-        async function renderUserFiles(){const pane=document.getElementById('userFilesList');if(!pane)return;try{cachedUserFiles=await userFilesAll();}catch(e){pane.textContent='IndexedDB is unavailable in this browser.';return}const query=(document.getElementById('fileSearchInput')?.value||'').toLowerCase();const visible=cachedUserFiles.filter(f=>(activeFileFolder==='*'||(f.folder||'')===activeFileFolder)&&(!query||(f.name||'').toLowerCase().includes(query)));const total=cachedUserFiles.reduce((n,f)=>n+(f.size||0),0);document.getElementById('fileStorageStat').textContent=`${cachedUserFiles.length} files · ${formatBytes(total)}`;pane.replaceChildren();const folders=[...new Set(cachedUserFiles.map(f=>f.folder||'').filter(Boolean))];const shortcuts=document.getElementById('fileFolderShortcuts');if(shortcuts){shortcuts.replaceChildren();folders.forEach(folder=>{const b=document.createElement('button');b.className='w-full text-left rounded-lg px-3 py-2 hover:bg-slate-800 text-slate-400 text-[11px] truncate';b.textContent='📁 '+folder;b.onclick=()=>setFileFolder(folder);shortcuts.appendChild(b)})}if(!visible.length){const empty=document.createElement('div');empty.className='store-empty mt-2';empty.textContent=query?'No files match your search.':'This folder is empty. Import files to get started.';pane.appendChild(empty);return}visible.sort((a,b)=>(b.savedAt||0)-(a.savedAt||0)).forEach(f=>{const row=document.createElement('div');row.className='flex items-center gap-3 p-3 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-cyan-400/30';const ic=document.createElement('div');ic.className='w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-300/20 grid place-items-center text-cyan-200';ic.textContent=/image/i.test(f.type)?'▧':/pdf/i.test(f.type)?'PDF':/text|json/i.test(f.type)?'TXT':/html/i.test(f.type)?'</>':'FILE';const meta=document.createElement('div');meta.className='flex-1 min-w-0';const name=document.createElement('div');name.className='text-xs font-bold text-white break-all';name.textContent=f.name;const info=document.createElement('div');info.className='text-[10px] text-slate-500 mt-1';info.textContent=`${formatBytes(f.size)} · ${f.folder||'Home'} · ${f.type||'unknown type'}`;meta.append(name,info);const actions=document.createElement('div');actions.className='flex flex-wrap gap-1.5 justify-end';actions.append(fileAction('Download',()=>downloadUserFile(f.id),'border-cyan-400/20 bg-cyan-400/10 text-cyan-200'),fileAction('Delete',()=>deleteUserFile(f.id),'border-rose-400/20 bg-rose-400/10 text-rose-200'));row.append(ic,meta,actions);pane.appendChild(row)})}
+        async function renderUserFiles(){const pane=document.getElementById('userFilesList');if(!pane)return;try{cachedUserFiles=await userFilesAll();}catch(e){pane.textContent='IndexedDB unavailable.';return}const query=(document.getElementById('fileSearchInput')?.value||'').toLowerCase();const visible=cachedUserFiles.filter(f=>(activeFileFolder==='*'||(f.folder||'')===activeFileFolder)&&(!query||(f.name||'').toLowerCase().includes(query)));const total=cachedUserFiles.reduce((n,f)=>n+(f.size||0),0);document.getElementById('fileStorageStat').textContent=`${cachedUserFiles.length} files · ${formatBytes(total)}`;pane.replaceChildren();const folders=[...new Set(cachedUserFiles.map(f=>f.folder||'').filter(Boolean))];const shortcuts=document.getElementById('fileFolderShortcuts');if(shortcuts){shortcuts.replaceChildren();folders.forEach(folder=>{const b=document.createElement('button');b.className='w-full text-left rounded-lg px-3 py-2 hover:bg-slate-800 text-slate-400 text-[11px] truncate';b.textContent='📁 '+folder;b.onclick=()=>setFileFolder(folder);shortcuts.appendChild(b)})}if(!visible.length){const empty=document.createElement('div');empty.className='store-empty mt-2';empty.textContent='Folder is empty.';pane.appendChild(empty);return}visible.sort((a,b)=>(b.savedAt||0)-(a.savedAt||0)).forEach(f=>{const row=document.createElement('div');row.className='flex items-center gap-3 p-3 rounded-xl bg-slate-900/70 border border-slate-800 hover:border-cyan-400/30';const ic=document.createElement('div');ic.className='w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-300/20 grid place-items-center text-cyan-200';ic.textContent='FILE';const meta=document.createElement('div');meta.className='flex-1 min-w-0';const name=document.createElement('div');name.className='text-xs font-bold text-white break-all';name.textContent=f.name;const info=document.createElement('div');info.className='text-[10px] text-slate-500 mt-1';info.textContent=`${formatBytes(f.size)} · ${f.folder||'Home'}`;meta.append(name,info);const actions=document.createElement('div');actions.className='flex flex-wrap gap-1.5 justify-end';actions.append(fileAction('Download',()=>downloadUserFile(f.id),'border-cyan-400/20 bg-cyan-400/10 text-cyan-200'),fileAction('Delete',()=>deleteUserFile(f.id),'border-rose-400/20 bg-rose-400/10 text-rose-200'));row.append(ic,meta,actions);pane.appendChild(row)})}
         async function downloadUserFile(id){const f=(await userFilesAll()).find(x=>x.id===id);if(!f)return;const blob=f.blob instanceof Blob?f.blob:new Blob([f.blob],{type:f.type||'application/octet-stream'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=f.name||'file';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)}
-        async function deleteUserFile(id){if(!confirm('Delete this file from Polaris Files on this device?'))return;await userFileDelete(id);document.getElementById('fileManagerStatus').textContent='File deleted from this device.';await renderUserFiles()}
+        async function deleteUserFile(id){if(!confirm('Delete this file?'))return;await userFileDelete(id);await renderUserFiles()}
 
-        // Polaris People: public profile directory and two-way friend requests.
+        // Polaris People Directory
         let peopleStarted=false, peopleDirectory={}, peopleIncoming={}, peopleFriends={};
         function myHandle(){return ((currentUser||'Polaris user').trim().toLowerCase().replace(/[^a-z0-9._-]/g,'')||'polarisuser')+'@polaris'}
-        async function publishMyProfile(){if(!window.firebaseApp||!window.currentAuthUser){document.getElementById('peopleStatus').textContent='Waiting for Firebase sign-in…';return}const {db,ref,set}=window.firebaseApp;try{await set(ref(db,'people/'+window.currentAuthUser.uid),{uid:window.currentAuthUser.uid,handle:myHandle(),displayName:currentUser||'Polaris user',updatedAt:Date.now()});document.getElementById('peopleStatus').textContent='Your Polaris profile is published.'}catch(e){document.getElementById('peopleStatus').textContent='Could not publish profile. Check database rules.'}}
+        async function publishMyProfile(){if(!window.firebaseApp||!window.currentAuthUser)return;const {db,ref,set}=window.firebaseApp;try{await set(ref(db,'people/'+window.currentAuthUser.uid),{uid:window.currentAuthUser.uid,handle:myHandle(),displayName:currentUser||'Polaris user',updatedAt:Date.now()});}catch(e){}}
         function initPeople(){
             if(peopleStarted||!window.firebaseApp)return;
             peopleStarted=true;
@@ -954,78 +1074,78 @@
             },400);
         }
         function peopleCard(title,sub,actions=[]){const card=document.createElement('div');card.className='p-3 rounded-xl border border-slate-800 bg-slate-900/70';const t=document.createElement('div');t.className='text-xs font-bold text-white break-all';t.textContent=title;const d=document.createElement('div');d.className='text-[10px] text-slate-500 mt-1';d.textContent=sub;card.append(t,d);const row=document.createElement('div');row.className='flex flex-wrap gap-1.5 mt-2';actions.forEach(a=>row.appendChild(fileAction(a.label,a.fn,a.cls||'border-fuchsia-400/20 bg-fuchsia-400/10 text-fuchsia-200')));card.appendChild(row);return card}
-        function renderPeople(){const dir=document.getElementById('peopleDirectory'),req=document.getElementById('peopleRequests'),friends=document.getElementById('peopleFriends');if(!dir||!req||!friends)return;const uid=window.currentAuthUser?.uid, query=(document.getElementById('peopleSearchInput')?.value||'').toLowerCase();dir.replaceChildren();const matches=Object.values(peopleDirectory).filter(p=>p.uid!==uid&&String(p.handle||'').toLowerCase().includes(query));if(!matches.length){const e=document.createElement('div');e.className='store-empty';e.textContent='No matching people yet. Ask a friend to open Polaris and set a handle.';dir.append(e)}matches.forEach(p=>{const isFriend=!!peopleFriends[p.uid],pending=!!peopleIncoming[p.uid];dir.appendChild(peopleCard(p.displayName||p.handle,p.handle||'',isFriend?[{label:'Email',fn:()=>{openWindow('mailWindow');showComposeMailView();document.getElementById('mailRecipient').value=p.handle}}]:pending?[{label:'Request received',fn:()=>{},cls:'border-emerald-400/20 bg-emerald-400/10 text-emerald-200'}]:[{label:'Add person',fn:()=>sendFriendRequest(p.uid)}]))});req.replaceChildren();const requests=Object.entries(peopleIncoming);if(!requests.length){const e=document.createElement('div');e.className='store-empty';e.textContent='No incoming requests.';req.append(e)}requests.forEach(([sender,r])=>req.appendChild(peopleCard(r.displayName||r.handle||'Polaris user',r.handle||'',[{label:'Accept',fn:()=>acceptFriendRequest(sender,r)},{label:'Ignore',fn:()=>ignoreFriendRequest(sender)}])));friends.replaceChildren();const fs=Object.entries(peopleFriends);if(!fs.length){const e=document.createElement('div');e.className='store-empty';e.textContent='Your friends will appear here.';friends.append(e)}fs.forEach(([fid,f])=>friends.appendChild(peopleCard(f.displayName||f.handle||'Polaris user',f.handle||'', [{label:'Email',fn:()=>{openWindow('mailWindow');showComposeMailView();document.getElementById('mailRecipient').value=f.handle||''}}])));const datalist=document.getElementById('polarisContactHandles');if(datalist){datalist.replaceChildren();fs.forEach(([fid,f])=>{const o=document.createElement('option');o.value=f.handle||'';datalist.appendChild(o)})}}
-        async function sendFriendRequest(targetUid){const me=window.currentAuthUser;if(!me||!window.firebaseApp)return;const {db,ref,set}=window.firebaseApp;await publishMyProfile();await set(ref(db,'friendRequests/'+targetUid+'/'+me.uid),{uid:me.uid,handle:myHandle(),displayName:currentUser||'Polaris user',timestamp:Date.now()});document.getElementById('peopleStatus').textContent='Friend request sent.'}
-        async function acceptFriendRequest(senderUid,profile){const me=window.currentAuthUser;if(!me||!window.firebaseApp)return;const {db,ref,set}=window.firebaseApp;const mine={uid:me.uid,handle:myHandle(),displayName:currentUser||'Polaris user',since:Date.now()};await set(ref(db,'friends/'+me.uid+'/'+senderUid),profile);await set(ref(db,'friends/'+senderUid+'/'+me.uid),mine);await set(ref(db,'friendRequests/'+me.uid+'/'+senderUid),null);document.getElementById('peopleStatus').textContent='Friend added.'}
-        async function ignoreFriendRequest(senderUid){if(!window.firebaseApp||!window.currentAuthUser)return;const {db,ref,set}=window.firebaseApp;await set(ref(db,'friendRequests/'+window.currentAuthUser.uid+'/'+senderUid),null)}
+        function renderPeople(){const dir=document.getElementById('peopleDirectory'),req=document.getElementById('peopleRequests'),friends=document.getElementById('peopleFriends');if(!dir||!req||!friends)return;const uid=window.currentAuthUser?.uid, query=(document.getElementById('peopleSearchInput')?.value||'').toLowerCase();dir.replaceChildren();const matches=Object.values(peopleDirectory).filter(p=>p.uid!==uid&&String(p.handle||'').toLowerCase().includes(query));if(!matches.length){const e=document.createElement('div');e.className='store-empty';e.textContent='No matching people.';dir.append(e)}matches.forEach(p=>{const isFriend=!!peopleFriends[p.uid],pending=!!peopleIncoming[p.uid];dir.appendChild(peopleCard(p.displayName||p.handle,p.handle||'',isFriend?[{label:'Email',fn:()=>{openWindow('mailWindow');showComposeMailView();document.getElementById('mailRecipient').value=p.handle}}]:pending?[{label:'Pending',fn:()=>{},cls:'border-emerald-400/20 bg-emerald-400/10 text-emerald-200'}]:[{label:'Add',fn:()=>sendFriendRequest(p.uid)}]))});req.replaceChildren();const requests=Object.entries(peopleIncoming);if(!requests.length){const e=document.createElement('div');e.className='store-empty';e.textContent='No requests.';req.append(e)}requests.forEach(([sender,r])=>req.appendChild(peopleCard(r.displayName||r.handle||'User',r.handle||'',[{label:'Accept',fn:()=>acceptFriendRequest(sender,r)}])));friends.replaceChildren();const fs=Object.entries(peopleFriends);if(!fs.length){const e=document.createElement('div');e.className='store-empty';e.textContent='No friends yet.';friends.append(e)}fs.forEach(([fid,f])=>friends.appendChild(peopleCard(f.displayName||f.handle||'User',f.handle||'',[{label:'Email',fn:()=>{openWindow('mailWindow');showComposeMailView();document.getElementById('mailRecipient').value=f.handle||''}}])));const datalist=document.getElementById('polarisContactHandles');if(datalist){datalist.replaceChildren();fs.forEach(([fid,f])=>{const o=document.createElement('option');o.value=f.handle||'';datalist.appendChild(o)})}}
+        async function sendFriendRequest(targetUid){const me=window.currentAuthUser;if(!me||!window.firebaseApp)return;const {db,ref,set}=window.firebaseApp;await publishMyProfile();await set(ref(db,'friendRequests/'+targetUid+'/'+me.uid),{uid:me.uid,handle:myHandle(),displayName:currentUser||'User',timestamp:Date.now()});}
+        async function acceptFriendRequest(senderUid,profile){const me=window.currentAuthUser;if(!me||!window.firebaseApp)return;const {db,ref,set}=window.firebaseApp;const mine={uid:me.uid,handle:myHandle(),displayName:currentUser||'User',since:Date.now()};await set(ref(db,'friends/'+me.uid+'/'+senderUid),profile);await set(ref(db,'friends/'+senderUid+'/'+me.uid),mine);await set(ref(db,'friendRequests/'+me.uid+'/'+senderUid),null);}
 
-        // Polaris app library: device apps live in IndexedDB; small HTML apps can be published to Realtime Database.
+        // Global App Store & Local Storage
         const STORE_MAX_BYTES = 180 * 1024;
         let storeListenerStarted = false;
         let globalStoreApps = {};
-        const APP_DB_NAME = 'polaris-local-apps';
-        const APP_DB_VERSION = 1;
+        const APP_DB_NAME = 'polaris-local-apps', APP_DB_VERSION = 1;
         function openAppDatabase() {
             return new Promise((resolve, reject) => {
                 const request = indexedDB.open(APP_DB_NAME, APP_DB_VERSION);
                 request.onupgradeneeded = () => { const db = request.result; if (!db.objectStoreNames.contains('apps')) db.createObjectStore('apps', { keyPath: 'id' }); };
                 request.onsuccess = () => resolve(request.result);
-                request.onerror = () => reject(request.error || new Error('Could not open local app storage.'));
+                request.onerror = () => reject(request.error || new Error('IndexedDB app store error'));
             });
         }
-        async function localAppsAll() {
-            const db = await openAppDatabase();
-            return new Promise((resolve, reject) => { const tx = db.transaction('apps', 'readonly'); const req = tx.objectStore('apps').getAll(); req.onsuccess = () => { db.close(); resolve(req.result || []); }; req.onerror = () => { db.close(); reject(req.error); }; });
-        }
-        async function localAppPut(app) {
-            const db = await openAppDatabase();
-            return new Promise((resolve, reject) => { const tx = db.transaction('apps', 'readwrite'); tx.objectStore('apps').put(app); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => { db.close(); reject(tx.error); }; });
-        }
-        async function localAppDelete(id) {
-            const db = await openAppDatabase();
-            return new Promise((resolve, reject) => { const tx = db.transaction('apps', 'readwrite'); tx.objectStore('apps').delete(id); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => { db.close(); reject(tx.error); }; });
-        }
+        async function localAppsAll() { const db = await openAppDatabase(); return new Promise((resolve, reject) => { const tx = db.transaction('apps', 'readonly'); const req = tx.objectStore('apps').getAll(); req.onsuccess = () => { db.close(); resolve(req.result || []); }; req.onerror = () => { db.close(); reject(req.error); }; }); }
+        async function localAppPut(app) { const db = await openAppDatabase(); return new Promise((resolve, reject) => { const tx = db.transaction('apps', 'readwrite'); tx.objectStore('apps').put(app); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => { db.close(); reject(tx.error); }; }); }
+        async function localAppDelete(id) { const db = await openAppDatabase(); return new Promise((resolve, reject) => { const tx = db.transaction('apps', 'readwrite'); tx.objectStore('apps').delete(id); tx.oncomplete = () => { db.close(); resolve(); }; tx.onerror = () => { db.close(); reject(tx.error); }; }); }
         function makeAppId() { return 'app_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 8); }
         function appSafeText(value, max=80) { return String(value || '').replace(/[<>]/g, '').trim().slice(0, max); }
         function formatBytes(bytes) { if (!Number.isFinite(Number(bytes)) || Number(bytes) < 1) return '0 B'; const units=['B','KB','MB']; const i=Math.min(Math.floor(Math.log(Number(bytes))/Math.log(1024)),2); return `${(Number(bytes)/Math.pow(1024,i)).toFixed(i?1:0)} ${units[i]}`; }
         function makeStoreAction(label, className, handler) { const b=document.createElement('button'); b.className='store-action '+(className||''); b.textContent=label; b.addEventListener('click', handler); return b; }
+        
         function renderLocalAppList(apps) {
             const list=document.getElementById('storeLocalList'); if(!list) return; list.replaceChildren();
             document.getElementById('storeLocalCount').textContent=String(apps.length);
-            if(!apps.length){ const empty=document.createElement('div'); empty.className='store-empty'; empty.textContent='No apps saved yet. Import your first HTML app above.'; list.appendChild(empty); return; }
+            if(!apps.length){ const empty=document.createElement('div'); empty.className='store-empty'; empty.textContent='No apps saved locally yet.'; list.appendChild(empty); return; }
             apps.sort((a,b)=>(b.savedAt||0)-(a.savedAt||0));
-            apps.forEach(app=>{ const card=document.createElement('div'); card.className='store-app-card'; const icon=document.createElement('div'); icon.className='store-app-icon'; const ic=document.createElement('i'); ic.setAttribute('data-lucide','file-code-2'); ic.className='w-5 h-5'; icon.appendChild(ic); const details=document.createElement('div'); details.className='min-w-0 flex-1'; const title=document.createElement('div'); title.className='store-app-title'; title.textContent=app.name; const meta=document.createElement('div'); meta.className='store-app-meta'; meta.textContent=`${formatBytes(app.size)} · Saved on this device`; details.append(title,meta); const actions=document.createElement('div'); actions.className='flex gap-1.5 flex-wrap justify-end'; actions.appendChild(makeStoreAction('Open','','()=>{}')); actions.lastChild.onclick=()=>openLocalApp(app.id); actions.appendChild(makeStoreAction('Publish','pink',()=>publishLocalApp(app.id))); actions.appendChild(makeStoreAction('Delete','ghost',()=>deleteLocalApp(app.id))); card.append(icon,details,actions); list.appendChild(card); });
-            if(window.lucide) lucide.createIcons();
+            apps.forEach(app=>{ 
+                const card=document.createElement('div'); card.className='store-app-card'; 
+                const icon=document.createElement('div'); icon.className='store-app-icon'; icon.innerHTML = '💻'; 
+                const details=document.createElement('div'); details.className='min-w-0 flex-1'; 
+                const title=document.createElement('div'); title.className='store-app-title'; title.textContent=app.name; 
+                const meta=document.createElement('div'); meta.className='store-app-meta'; meta.textContent=`${formatBytes(app.size)} · Local`; 
+                details.append(title,meta); 
+                const actions=document.createElement('div'); actions.className='flex gap-1.5 flex-wrap justify-end'; 
+                actions.appendChild(makeStoreAction('Run','',()=>openLocalApp(app.id))); 
+                actions.appendChild(makeStoreAction('Publish','pink',()=>publishLocalApp(app.id))); 
+                actions.appendChild(makeStoreAction('Delete','ghost',()=>deleteLocalApp(app.id))); 
+                card.append(icon,details,actions); list.appendChild(card); 
+            });
         }
-        async function refreshLocalApps() { try { renderLocalAppList(await localAppsAll()); } catch(e) { console.error(e); const el=document.getElementById('storeLocalList'); if(el) el.textContent='Local app storage is unavailable in this browser context.'; } }
+        async function refreshLocalApps() { try { renderLocalAppList(await localAppsAll()); } catch(e) { console.error(e); } }
         async function importLocalApp() {
             const input=document.getElementById('storeLocalFile'), status=document.getElementById('storeLocalStatus'), file=input.files&&input.files[0]; if(!file) return;
             try {
-                if(!/\.html?$/i.test(file.name) && file.type!=='text/html') throw new Error('Please choose an .html or .htm app file.');
-                if(file.size>STORE_MAX_BYTES) throw new Error('This version supports HTML apps up to 180 KB.');
-                const content=await file.text(); if(!/<html[\s>]/i.test(content) && !/<!doctype html/i.test(content)) throw new Error('That file does not look like a complete HTML app.');
-                const name=appSafeText(file.name.replace(/\.html?$/i,''),70)||'Untitled app';
+                if(!/\.html?$/i.test(file.name) && file.type!=='text/html') throw new Error('Choose a valid .html app file.');
+                if(file.size>STORE_MAX_BYTES) throw new Error('File exceeds 180 KB limit.');
+                const content=await file.text();
+                const name=appSafeText(file.name.replace(/\.html?$/i,''),70)||'Untitled App';
                 await localAppPut({id:makeAppId(),name,filename:file.name,content,size:file.size,savedAt:Date.now()});
-                status.textContent=`Saved “${name}” to this device.`; input.value=''; await refreshLocalApps();
-            } catch(e) { status.textContent=e.message||'Could not import this app.'; }
+                status.textContent=`Successfully imported “${name}”!`; input.value=''; await refreshLocalApps();
+            } catch(e) { status.textContent=e.message||'Import failed.'; }
         }
         async function openLocalApp(id) {
             const apps=await localAppsAll(), app=apps.find(a=>a.id===id); if(!app) return;
-            const win=window.open('about:blank','_blank'); if(!win){ document.getElementById('storeLocalStatus').textContent='Allow pop-ups to open this app.'; return; }
+            const win=window.open('about:blank','_blank'); if(!win){ alert('Allow pop-ups to run apps.'); return; }
             win.document.open(); win.document.write(app.content); win.document.close();
         }
-        async function deleteLocalApp(id) { if(!confirm('Delete this app from this device?')) return; await localAppDelete(id); await refreshLocalApps(); document.getElementById('storeLocalStatus').textContent='App removed from this device.'; }
+        async function deleteLocalApp(id) { if(!confirm('Delete this app?')) return; await localAppDelete(id); await refreshLocalApps(); document.getElementById('storeLocalStatus').textContent='App deleted.'; }
         async function publishLocalApp(id) {
             const status=document.getElementById('storeLocalStatus');
             try {
-                const apps=await localAppsAll(), app=apps.find(a=>a.id===id); if(!app) throw new Error('Could not find that local app.');
-                if(app.size>STORE_MAX_BYTES) throw new Error('This app exceeds the store size limit.');
-                if(!window.firebaseApp || !window.currentAuthUser) throw new Error('Firebase sign-in is not ready. Refresh and try again.');
+                const apps=await localAppsAll(), app=apps.find(a=>a.id===id); if(!app) throw new Error('App not found.');
+                if(!window.firebaseApp || !window.currentAuthUser) throw new Error('Firebase connection not ready.');
                 const {db,ref,push,set}=window.firebaseApp; const listing=push(ref(db,'store/apps'));
-                status.textContent=`Publishing “${app.name}”…`;
-                await set(listing,{name:app.name,filename:app.filename,type:'text/html',size:app.size,content:app.content,uploader:String(window.currentUser||'Polaris user').slice(0,40),uploaderUid:window.currentAuthUser.uid,timestamp:Date.now()});
-                status.textContent=`Published “${app.name}” to the Global Catalogue.`;
-            } catch(e) { console.error(e); status.textContent=e.message||'Publish failed. Check your Realtime Database rules.'; }
+                status.textContent=`Publishing “${app.name}” to global catalogue…`;
+                await set(listing,{name:app.name,filename:app.filename,type:'text/html',size:app.size,content:app.content,uploader:String(currentUser||'User').slice(0,40),uploaderUid:window.currentAuthUser.uid,timestamp:Date.now()});
+                status.textContent=`“${app.name}” successfully published globally!`;
+            } catch(e) { console.error(e); status.textContent=e.message||'Publish failed.'; }
         }
         function initStoreListener() {
             if(storeListenerStarted || !window.firebaseApp) return; storeListenerStarted=true;
@@ -1035,19 +1155,26 @@
                 if(snapshot.exists()) snapshot.forEach(child=>{ globalStoreApps[child.key]={id:child.key,...child.val()}; });
                 const apps=Object.values(globalStoreApps).sort((a,b)=>(b.timestamp||0)-(a.timestamp||0));
                 document.getElementById('storeGlobalCount').textContent=String(apps.length);
-                if(!apps.length){ const empty=document.createElement('div'); empty.className='store-empty'; empty.textContent='The global catalogue is empty for now. Publish an app from My OS Apps to be first.'; list.appendChild(empty); return; }
+                if(!apps.length){ const empty=document.createElement('div'); empty.className='store-empty'; empty.textContent='Global store is empty.'; list.appendChild(empty); return; }
                 apps.forEach(app=>{
-                    const card=document.createElement('div'); card.className='store-app-card'; const icon=document.createElement('div'); icon.className='store-app-icon'; const ic=document.createElement('i'); ic.setAttribute('data-lucide','app-window'); ic.className='w-5 h-5'; icon.appendChild(ic);
-                    const details=document.createElement('div'); details.className='min-w-0 flex-1'; const title=document.createElement('div'); title.className='store-app-title'; title.textContent=String(app.name||'Untitled app'); const meta=document.createElement('div'); meta.className='store-app-meta'; meta.textContent=`${formatBytes(app.size||0)} · by ${String(app.uploader||'Polaris user')}`; details.append(title,meta);
-                    const actions=document.createElement('div'); actions.className='flex gap-1.5 flex-wrap justify-end'; actions.appendChild(makeStoreAction('Run','',()=>openGlobalApp(app.id))); actions.appendChild(makeStoreAction('Save to OS','pink',()=>saveGlobalAppLocally(app.id))); actions.appendChild(makeStoreAction('Download','ghost',()=>downloadGlobalApp(app.id))); card.append(icon,details,actions); list.appendChild(card);
-                }); if(window.lucide) lucide.createIcons();
-            },error=>{console.error(error); const list=document.getElementById('storeUploadList'); if(list) list.textContent='Could not load the global catalogue. Check Firebase Realtime Database rules.';});
+                    const card=document.createElement('div'); card.className='store-app-card'; 
+                    const icon=document.createElement('div'); icon.className='store-app-icon'; icon.innerHTML = '🌐';
+                    const details=document.createElement('div'); details.className='min-w-0 flex-1'; 
+                    const title=document.createElement('div'); title.className='store-app-title'; title.textContent=String(app.name||'App'); 
+                    const meta=document.createElement('div'); meta.className='store-app-meta'; meta.textContent=`${formatBytes(app.size||0)} · by ${String(app.uploader||'User')}`; 
+                    details.append(title,meta);
+                    const actions=document.createElement('div'); actions.className='flex gap-1.5 flex-wrap justify-end'; 
+                    actions.appendChild(makeStoreAction('Run','',()=>openGlobalApp(app.id))); 
+                    actions.appendChild(makeStoreAction('Save','pink',()=>saveGlobalAppLocally(app.id))); 
+                    actions.appendChild(makeStoreAction('Download','ghost',()=>downloadGlobalApp(app.id))); 
+                    card.append(icon,details,actions); list.appendChild(card);
+                }); 
+            });
         }
-        async function saveGlobalAppLocally(id) { const app=globalStoreApps[id]; if(!app||typeof app.content!=='string') return; try { await localAppPut({id:makeAppId(),name:appSafeText(app.name,70)||'Community app',filename:app.filename||'community-app.html',content:app.content,size:new Blob([app.content]).size,savedAt:Date.now(),sourceId:id}); await refreshLocalApps(); document.getElementById('storeLocalStatus').textContent=`Saved “${app.name}” to My OS Apps.`; } catch(e) { console.error(e); } }
-        function openGlobalApp(id) { const app=globalStoreApps[id]; if(!app||typeof app.content!=='string') return; const win=window.open('about:blank','_blank'); if(!win){alert('Allow pop-ups to run this app.');return;} win.document.open(); win.document.write(app.content); win.document.close(); }
-        function downloadGlobalApp(id) { const app=globalStoreApps[id]; if(!app||typeof app.content!=='string') return; const blob=new Blob([app.content],{type:'text/html'}), url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url; a.download=(app.filename||app.name||'polaris-app').replace(/[^a-z0-9._-]/gi,'_'); document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500); }
+        async function saveGlobalAppLocally(id) { const app=globalStoreApps[id]; if(!app||typeof app.content!=='string') return; try { await localAppPut({id:makeAppId(),name:appSafeText(app.name,70)||'Community App',filename:app.filename||'app.html',content:app.content,size:new Blob([app.content]).size,savedAt:Date.now()}); await refreshLocalApps(); document.getElementById('storeLocalStatus').textContent=`Saved “${app.name}” locally.`; } catch(e) { console.error(e); } }
+        function openGlobalApp(id) { const app=globalStoreApps[id]; if(!app||typeof app.content!=='string') return; const win=window.open('about:blank','_blank'); if(!win){alert('Allow pop-ups.');return;} win.document.open(); win.document.write(app.content); win.document.close(); }
+        function downloadGlobalApp(id) { const app=globalStoreApps[id]; if(!app||typeof app.content!=='string') return; const blob=new Blob([app.content],{type:'text/html'}), url=URL.createObjectURL(blob), a=document.createElement('a'); a.href=url; a.download=(app.filename||'app').replace(/[^a-z0-9._-]/gi,'_'); document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),1500); }
 
-        // Initialise the store when Firebase is available.
         const storeInitPoll = setInterval(() => {
             if (window.firebaseApp) {
                 initStoreListener();
@@ -1055,7 +1182,6 @@
                 clearInterval(storeInitPoll);
             }
         }, 500);
-
 
         // Admin Security PIN Handler (1010)
         let ctrlECount = 0, ctrlETimer;
@@ -1091,14 +1217,14 @@
             const target = document.getElementById('adminTargetUid').value.trim();
             if (!target || !window.firebaseApp) return;
             const { db, ref, set } = window.firebaseApp;
-            set(ref(db, 'bans/chat/' + target), true).then(() => alert('User banned from Firebase Chat.'));
+            set(ref(db, 'bans/chat/' + target), true).then(() => alert('User banned from Chat.'));
         }
 
         function banUserFromWebsite() {
             const target = document.getElementById('adminTargetUid').value.trim();
             if (!target || !window.firebaseApp) return;
             const { db, ref, set } = window.firebaseApp;
-            set(ref(db, 'bans/site/' + target), true).then(() => alert('User banned from entire website access.'));
+            set(ref(db, 'bans/site/' + target), true).then(() => alert('User banned from Website.'));
         }
 
         function setOsLayout(layout) {
@@ -1193,19 +1319,19 @@
             iframe.src = /^https?:\/\//i.test(target) ? target : 'https://' + target;
         }
 
-        // Smooth Aurora boot sequence: paced progress with real Firebase readiness as one milestone.
+        // Smooth Aurora boot sequence
         window.addEventListener('DOMContentLoaded', () => {
             const savedLayout = localStorage.getItem('polaris_layout');
             if (savedLayout) setOsLayout(savedLayout);
             const bar=document.getElementById('bootBar'), status=document.getElementById('bootStatus'), percent=document.getElementById('bootPercent');
-            const stages=[{at:12,text:'Starting the Polaris shell…'},{at:31,text:'Preparing your workspace…'},{at:51,text:'Mounting local app library…'},{at:70,text:'Connecting to the community…'},{at:88,text:'Polishing the desktop…'},{at:100,text:'Ready when you are.'}];
+            const stages=[{at:12,text:'Starting Polaris shell…'},{at:31,text:'Preparing workspace…'},{at:51,text:'Mounting local apps…'},{at:70,text:'Connecting to Discord & Cloud…'},{at:88,text:'Polishing desktop…'},{at:100,text:'Ready.'}];
             let progress=0, stage=0;
             const tick=()=>{
                 const target=(window.firebaseReady||progress>78)?100:88;
                 progress=Math.min(target,progress+(progress<35?1.6:progress<70?1.15:.72));
                 if(bar) bar.style.width=progress+'%'; if(percent) percent.textContent=Math.floor(progress)+'%';
                 while(stage<stages.length && progress>=stages[stage].at){if(status) status.textContent=stages[stage].text;stage++;}
-                if(progress>=100){if(status) status.textContent='Ready when you are.';setTimeout(()=>{const screen=document.getElementById('bootScreen');if(screen){screen.classList.add('boot-exit');setTimeout(()=>{screen.style.display='none';checkAccountState();},950);}},550);}
+                if(progress>=100){if(status) status.textContent='Ready.';setTimeout(()=>{const screen=document.getElementById('bootScreen');if(screen){screen.classList.add('boot-exit');setTimeout(()=>{screen.style.display='none';checkAccountState();},950);}},550);}
                 else requestAnimationFrame(()=>setTimeout(tick,24));
             };
             setTimeout(()=>requestAnimationFrame(tick),350);
